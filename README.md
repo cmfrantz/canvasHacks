@@ -10,9 +10,9 @@ scripts to make using Canvas easier
 ## Example
 <table>
 	<tr>
-		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_GoogleDoc.png" height="300 px"></td>
-		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_HTML-before.png" height="300 px"></td>
-		<td><img src=""></td>
+		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_GoogleDoc.png" height="250 px"></td>
+		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_HTML-before.png" height="250 px"></td>
+		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_cmd.png" height="250 px"></td>
 	</tr>
 	<tr>
 		<td>A nice, formatted Google doc, a few hundred pages long, that needs to be converted to a Canvas page.</td>
@@ -23,9 +23,9 @@ scripts to make using Canvas easier
 		<td colspan=3></td>
 	</tr>
 	<tr>
-		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_HTML-after.png" height="300 px"></td>
-		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_Canvas-after.png" height="300 px"></td>
-		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_Table-after.png" height="300 px"></td>
+		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_HTML-after.png" height="250 px"></td>
+		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_Canvas-after.png" height="250 px"></td>
+		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_Table-after.png" height="250 px"></td>
 	</tr>
 	<tr>
 		<td>Cleaned up and re-formatted HTML post-processing</td>
