@@ -1,5 +1,5 @@
 # canvasHacks
-scripts to make using Canvas easier
+Scripts to make using Canvas easier
 
 ## List of scripts
 <table>
