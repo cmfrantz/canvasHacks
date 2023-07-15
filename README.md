@@ -5,9 +5,10 @@ Scripts to make using Canvas easier
 <table>
 <tr><th>Script</th><th>Description</th><th>Data files used</th><th>Other requirements</th><th>Notes</th></tr>
 <tr><td>Pretty4Canvas.py</td><td>Converts unformatted tagged HTML to formatted HTML for making pretty Canvas pages from large documents</td><td>One or more *.html or *.txt HTML files</td><td></td><td>Right now, it makes tabs from top-level headings, and pretties up tables. This is the stuff I find myself going crazy doing manually, so this automates it. The script is still sort of buggy, and the HTML docs produced need some cleanup either in Canvas or in a text editor.</td></tr>
+<tr><td>GenerateQuestionBanks.py</td><td>Takes a spreadsheet containing questions (or pieces of questions) and answers and formats them for Respondus, which can then import bulk questions as a question bank. This was built in order to quickly generate large question banks containing HTML (embed) code, but could be repurposed for other types of questions.</td><td>Spreadsheet (csv file) containing question pieces to automatically generate questions from.</td><td>Respondus software for Canvas</td><td></td></tr>
 </table>
 
-## Example
+## Pretty4Canvas example
 <table>
 	<tr>
 		<td><img src="https://github.com/cmfrantz/canvasHacks/blob/main/images/Screenshot_GoogleDoc.png" height="250 px"></td>
@@ -36,10 +37,11 @@ Scripts to make using Canvas easier
 														   
 
 ## Setting up
-The code for this project requires the following list of packages in order to run.
+The code for these projects require the following list of packages in order to run.
 <ul>
 <li>os</li>
 <li>tkinter</li>
+<li>pandas</li>
 </ul>
 
 To install using conda, execute the command:
