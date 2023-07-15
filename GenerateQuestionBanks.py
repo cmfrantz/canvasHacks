@@ -78,6 +78,16 @@ def format_RockOrMineral():
     a formatted curated Sketchfab image list.
     
     Copy and modify this def to create new question bank types.
+    
+    This example imports a spreadsheet with the columns
+        'Type' (type of rock that students need to identify)
+        'Difficulty' (difficulty of the identification)
+        'Embed' (the HTML embed code containing the 3D rock model that students
+                 will identify)
+        'Description' (text that forms the general feedback for the question)
+        
+    It then generates Respondus-formatted multiple choice questions that test
+    students' ability to identify the rocks they are shown.
     '''
     # Get input table
     input_table, dirPath = getInputTable(
