@@ -36,7 +36,11 @@ MC_letters = ['a','b','c','d','e','f','g','h','i','j']
 
 # These are the available types of question banks that this code supports.
 #   Each value in the list corresponds with a script (def) below.
-BankTypes = ['RockOrMineral']
+BankTypes = [
+    'RockOrMineral3D',
+    'RockCycleClassification3D',
+    'Igneous Classification3D'
+    ]
 
 
 ####################
@@ -148,22 +152,19 @@ def build_MC_bank(Respondus_table, fpath):
         text = text + q_text + '\n'
     
     # Save text to a text file
-    with open(fpath, 'w') as f:
+    with open(fpath, 'w', encoding='utf-8') as f:
         f.write(text)
         f.close()
         
-            
-            
-
 
 ####################
 # QUESTION BANK SCRIPTS
 ####################
 
-def format_RockOrMineral():
+def format_RockOrMineral3D():
     '''
     Formats a Respondus-formatted text file
-    for a "Rock or mineral?" question set.
+    for a "Rock or mineral?" question set that uses interactive 3D rock models.
     
     Copy and modify this def to create new question bank types.
     
@@ -191,10 +192,11 @@ def format_RockOrMineral():
         + 'all, ' + diff_levels + '\n')
     
     # Trim the table based on the difficulty level
+    in_table = input_table.copy()
     if difficulty == 'easy':
-        in_table = input_table[input_table['Difficulty']=='easy']
+        in_table = in_table[in_table['Difficulty']=='easy']
     elif difficulty == 'moderate':
-        in_table = input_table[input_table['Difficulty']=='moderate']
+        in_table = in_table[in_table['Difficulty']=='moderate']
     in_table = in_table.reset_index(drop=True)
     
     # Fill in Respondus table
@@ -237,6 +239,220 @@ def format_RockOrMineral():
     
     return Respondus_table
 
+
+def format_RockCycleClassification3D():
+    '''
+    Formats a Respondus-formatted text file
+    for a rock cycle classification question set that uses
+    interactive 3D rock models.
+    
+    This example imports a spreadsheet with the columns
+        'Type' (type of rock that students need to identify)
+        'Difficulty' (difficulty of the identification, which is used in this
+                      script to trim the question set to just questions with
+                      a designated difficulty level)
+        'Embed' (the HTML embed code containing the 3D rock model that students
+                 will identify)
+        'Description' (text that forms the general feedback for the question)
+        
+    It then generates Respondus-formatted multiple choice questions that test
+    students' ability to classify the rocks they are shown as being
+    sedimentary, extrusive igneous, intrusive igneous, metamorphic, or mineral.
+    '''
+    # Get input table
+    input_table, dirPath = getInputTable(
+        'Select rock and mineral 3D model list for the question bank (CSV)')
+    
+    # Have user select the difficulty from the difficulty list present in
+    #   the input table
+    diff_levels = ', '.join(list(set(input_table['Difficulty'])))
+    difficulty = input(
+        'Select the difficulty level for the question bank. Options are:  '
+        + 'all, ' + diff_levels + '\n')
+    
+    # Trim the table based on the difficulty level
+    in_table = input_table.copy()
+    if difficulty == 'easy':
+        in_table = in_table[in_table['Difficulty']=='easy']
+    elif difficulty == 'moderate':
+        in_table = in_table[in_table['Difficulty']=='moderate']
+    in_table = in_table.reset_index(drop=True)
+    
+    # Fill in Respondus table
+    # Type of question
+    Respondus_table['Type'] = ['MC'] * len(in_table)
+    # Question title
+    Respondus_table['Title/ID'] = (
+        ['Rock Cycle Rock Classification Level ' + difficulty] * len(in_table))
+    # Number of points per question
+    Respondus_table['Points'] = [1] * len(in_table)
+    # Wording of the question
+    Respondus_table['Question Wording'] = (
+        "[HTML]<p>What kind of rock is this?</p>"
+        + in_table['Embed'] + '[/HTML]')
+    # Multiple choice possible answers
+    Respondus_table['Choice 1'] = ['mineral'] * len(in_table)
+    Respondus_table['Choice 2'] = ['sedimentary'] * len(in_table)
+    Respondus_table['Choice 3'] = ['extrusive igenous'] * len(in_table)
+    Respondus_table['Choice 4'] = ['intrusive igenous'] * len(in_table)
+    Respondus_table['Choice 5'] = ['metamorphic'] * len(in_table)
+    # Feedback
+    Respondus_table['General Feedback'] = in_table['Description']
+    
+    # Generate correct answers from values in the input table
+    answers = in_table['Type'].values
+    for i in range(len(answers)):
+        if answers[i]=='mineral':
+            answers[i] = 1
+        if answers[i]=='sedimentary rock':
+            answers[i] = 2
+        if answers[i]=='extrusive igneous':
+            answers[i] = 3
+        if answers[i]=='intrusive igneous':
+            answers[i] = 4
+        if answers[i]=='metamorphic':
+            answers[i] = 5
+    Respondus_table['Correct Answer'] = answers
+    
+    # Save the Respondus table file
+    fname = 'Respondus_RockCycleClassification'    
+    Respondus_table.to_csv(dirPath + '/' + fname + '.csv',
+                           index=False)
+    print('Generated RockCycleClassification question bank and saved it to ' + 
+          dirPath + '/' + fname + '.csv')
+    
+    # Build and save the Respondus text file
+    build_MC_bank(Respondus_table, dirPath + '/' + fname + '.txt')
+    print(' and ' + fname + '.txt')
+    
+    return Respondus_table
+
+
+def format_IgneousClassification3D():
+    '''
+    Formats a Respondus-formatted text file
+    for an igneous rock classification question set that uses
+    interactive 3D rock models.
+    
+    This example imports a spreadsheet with the columns
+        'Type' (type of rock that students need to identify)
+        'Felsic-Mafic' (whether the rock composition is felsic, mafic, or 
+                        intermediate)
+        'Difficulty' (difficulty of the identification, which is used in this
+                      script to trim the question set to just questions with
+                      a designated difficulty level)
+        'Embed' (the HTML embed code containing the 3D rock model that students
+                 will identify)
+        'Description' (text that forms the general feedback for the question)
+        
+    It then generates Respondus-formatted multiple choice questions that test
+    students' ability to classify the igneous rocks they are shown as being
+    extrusive or intrusive and felsic, intermediate, or mafic.
+    '''
+    # Get input table
+    input_table, dirPath = getInputTable(
+        'Select rock and mineral 3D model list for the question bank (CSV)')
+    
+    # Have user select the difficulty from the difficulty list present in
+    #   the input table
+    diff_levels = ', '.join(list(set(input_table['Difficulty'])))
+    difficulty = input(
+        'Select the difficulty level for the question bank. Options are:  '
+        + 'all, ' + diff_levels + '\n')
+    
+    # Trim the table to igneous rocks only
+    in_table = input_table.copy()
+    in_table = in_table[in_table['Type'].str.contains('igneous')==True]
+    
+    # Trim the table based on the difficulty level
+    if difficulty == 'easy':
+        in_table = in_table[in_table['Difficulty']=='easy']
+    elif difficulty == 'moderate':
+        in_table = in_table[in_table['Difficulty']=='moderate']
+    in_table = in_table.reset_index(drop=True)
+    
+    # Fill in Respondus table
+    # Type of question
+    Respondus_table['Type'] = ['MC'] * len(in_table)
+    # Question title
+    Respondus_table['Title/ID'] = (
+        ['Igneous Rock Classification Level ' + difficulty] * len(in_table))
+    # Number of points per question
+    Respondus_table['Points'] = [1] * len(in_table)
+    # Wording of the question
+    Respondus_table['Question Wording'] = (
+        "[HTML]<p>How did this rock form?</p>"
+        + in_table['Embed'] + '[/HTML]')
+    
+    # Multiple choice possible answers
+    answer_set = {
+        'extrusive igneous felsic'          :  {
+            'choice'        : 1,
+            'type'          : 'extrusive igneous',
+            'composition'   : 'felsic',
+            'formation'     : ('Formed during an eruption ' + 
+                               '(extrusive igneous) of felsic lava')
+            },
+        'extrusive igneous intermediate'    :  {
+            'choice'        : 2,
+            'type'          : 'extrusive igneous',
+            'composition'   : 'intermediate',
+            'formation'     : ('Formed during an eruption ' + 
+                               '(extrusive igneous) of lava ' +
+                               'of intermediate composition')
+            },
+        'extrusive igneous mafic'           :  {
+            'choice'        : 3,
+            'type'          : 'extrusive igneous',
+            'composition'   : 'mafic',
+            'formation'     : ('Formed during an eruption ' + 
+                               '(extrusive igneous) of mafic lava')
+            },
+        'intrusive igneous felsic'          :  {
+            'choice'        : 4,
+            'type'          : 'intrusive igneous',
+            'composition'   : 'felsic',
+            'formation'     : ('Felsic magma cooled slowly inside the Earth')
+            },
+        'intrusive igneous intermediate'    :  {
+            'choice'        : 5,
+            'type'          : 'intrusive igneous',
+            'composition'   : 'intermediate',
+            'formation'     : ('Intermediate composition magma ' +
+                               ' cooled slowly inside the Earth')
+            },
+        'intrusive igneous mafic'           :  {
+            'choice'        : 6,
+            'type'          : 'intrusive igneous',
+            'composition'   : 'mafic',
+            'formation'     : ('Mafic magma cooled slowly inside the Earth')
+            }
+        }
+    for ans in answer_set:
+        Respondus_table['Choice ' + str(answer_set[ans]['choice'])] = (
+            answer_set[ans]['formation']
+            )
+
+    # Feedback
+    Respondus_table['General Feedback'] = in_table['Description'].values
+    
+    # Generate correct answers from values in the input table
+    for i in in_table.index:
+        ans = in_table.loc[i]['Type'] + ' ' + in_table.loc[i]['Felsic-Mafic']
+        Respondus_table.at[i,'Correct Answer'] = answer_set[ans]['choice']
+    
+    # Save the Respondus table file
+    fname = 'Respondus_IgneousClassification'    
+    Respondus_table.to_csv(dirPath + '/' + fname + '.csv',
+                           index=False)
+    print('Generated IgneousClassification question bank and saved it to ' + 
+          dirPath + '/' + fname + '.csv')
+    
+    # Build and save the Respondus text file
+    build_MC_bank(Respondus_table, dirPath + '/' + fname + '.txt')
+    print(' and ' + fname + '.txt')
+    
+    return Respondus_table
 #%%
 ####################
 # MAIN FUNCTION
