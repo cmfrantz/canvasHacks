@@ -39,7 +39,7 @@ MC_letters = ['a','b','c','d','e','f','g','h','i','j']
 BankTypes = [
     'RockOrMineral3D',
     'RockCycleClassification3D',
-    'Igneous Classification3D'
+    'IgneousClassification3D'
     ]
 
 
