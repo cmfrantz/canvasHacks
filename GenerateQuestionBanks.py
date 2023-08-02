@@ -46,7 +46,7 @@ BankTypes = [
 ####################
 # GENERAL SCRIPTS
 ####################
-def getInputTable(title):
+def getInputTable(title, directory = os.getcwd()):
     '''
     Loads the spreadsheet used as the input table.
 
@@ -54,6 +54,8 @@ def getInputTable(title):
     ----------
     title : str
         Title for the file selection user interface.
+    directory: str
+        Default directory to start in.
 
     Returns
     -------
@@ -67,7 +69,7 @@ def getInputTable(title):
     # Open user input file dialog to pick file
     root=Tk()
     filename=filedialog.askopenfilename(
-        initialdir=os.getcwd(), title = title,
+        initialdir=directory, title = title,
         filetypes = [('CSV', '*.csv')])
     dirPath = os.path.dirname(filename)     # Directory
     root.destroy()
@@ -453,6 +455,8 @@ def format_IgneousClassification3D():
     print(' and ' + fname + '.txt')
     
     return Respondus_table
+
+
 #%%
 ####################
 # MAIN FUNCTION
