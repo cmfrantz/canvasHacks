@@ -39,7 +39,8 @@ MC_letters = ['a','b','c','d','e','f','g','h','i','j']
 BankTypes = [
     'RockOrMineral3D',
     'RockCycleClassification3D',
-    'IgneousClassification3D'
+    'IgneousClassification3D',
+    'GenericMC'
     ]
 
 
@@ -456,7 +457,88 @@ def format_IgneousClassification3D():
     
     return Respondus_table
 
-
+def format_GenericMC():
+    '''
+    Formats a Respondus-formatted text file for a multiple choice question
+    set imported from a table.
+    
+    This example imports a spreadsheet with the columns
+        'Question group'    Title of question (this part is the same for each
+                               question in the set)
+        'Difficulty'        Question difficulty (can be used to create
+                                different sets based on difficulty)
+        'Points'            Points to award
+        'Question'          Question text
+        'Choice 1'          First possible choice
+        'Choice 2'          Second possible choice
+        'Choice 3'          Third possible choice
+        'Choice 4'          Fourth possible choice
+        'Choice 5'          Fifth possible choice
+        'General'           General feedback for the question
+        
+    It then generates Respondus-formatted multiple choice questions for the set
+    '''
+    # Get input table
+    input_table, dirPath = getInputTable(
+        'Select table containing the question set (CSV)')
+    
+    # Have user select the difficulty from the difficulty list present in
+    #   the input table       
+    # Trim the table based on the difficulty level
+    in_table = input_table.copy()
+    diff_levels = list(set(input_table['Difficulty']))
+    if len(diff_levels)>1:
+        diff_levels = ', '.join(list(set(input_table['Difficulty'])))
+        difficulty = input(
+            'Select the difficulty level for the question bank. Options are:  '
+            + 'all, ' + diff_levels + '\n')
+        if difficulty == 'easy':
+            in_table = in_table[in_table['Difficulty']=='easy']
+        elif difficulty == 'moderate':
+            in_table = in_table[in_table['Difficulty']=='moderate']
+        difficulty_title = ' Level ' + difficulty
+    else: difficulty_title = ''
+    in_table = in_table.reset_index(drop=True)
+    
+    # Fill in Respondus table
+    # Type of question
+    Respondus_table['Type'] = ['MC'] * len(in_table)
+    # Question title
+    Respondus_table['Title/ID'] = (
+        [in_table.iloc[0]['Question group'] + difficulty_title]
+        * len(in_table))
+    # Number of points per question
+    Respondus_table['Points'] = [in_table.iloc[0]['Points']] * len(in_table)
+    # Wording of the question
+    Respondus_table['Question Wording'] = (
+        '[HTML]<p><em>' + in_table['Question group'] + '</em></p>' +
+        '<p>' + in_table['Question'] + '</p>[/HTML]'
+        )
+    # Multiple choice possible answers
+    Respondus_table['Choice 1'] = in_table['Choice 1']
+    Respondus_table['Choice 2'] = in_table['Choice 2']
+    Respondus_table['Choice 3'] = in_table['Choice 3']
+    Respondus_table['Choice 4'] = in_table['Choice 4']
+    #Respondus_table['Choice 5'] = in_table['Choice 5']
+    
+    # Correct answer
+    Respondus_table['Correct Answer'] = in_table['Correct Answer']
+    
+    # Feedback
+    Respondus_table['General Feedback'] = in_table['General']
+    
+    # Save the Respondus table file
+    fname = 'Respondus_RockCycleClassification'    
+    Respondus_table.to_csv(dirPath + '/' + fname + '.csv',
+                           index=False)
+    print('Generated RockCycleClassification question bank and saved it to ' + 
+          dirPath + '/' + fname + '.csv')
+    
+    # Build and save the Respondus text file
+    build_MC_bank(Respondus_table, dirPath + '/' + fname + '.txt')
+    print(' and ' + fname + '.txt')
+    
+    return Respondus_table
 #%%
 ####################
 # MAIN FUNCTION
