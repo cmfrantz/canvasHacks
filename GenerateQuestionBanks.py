@@ -18,6 +18,7 @@ import os
 import pandas as pd
 from tkinter import *
 from tkinter import filedialog
+import numpy as np
 
 
 ####################
@@ -40,6 +41,7 @@ BankTypes = [
     'RockOrMineral3D',
     'RockCycleClassification3D',
     'IgneousClassification3D',
+    'LogScaleIntensity',
     'GenericMC'
     ]
 
@@ -158,6 +160,41 @@ def build_MC_bank(Respondus_table, fpath):
     with open(fpath, 'w', encoding='utf-8') as f:
         f.write(text)
         f.close()
+        
+        
+def genRandomAnswerSet(all_possible_answers, correct_answer, n):
+    '''
+    Generates a random set of n answers from a list of possible answers
+    for a question given one correct answer.
+
+    Parameters
+    ----------
+    all_possible_answers : list of str
+        List of all possible answers to draw from. If a sorted output list
+        is desired, the input list should be already sorted.
+    correct_answer : str
+        The correct answer to include.
+    n_answers : int
+        Number of answers to return.
+
+    Returns
+    -------
+    return_list : list of str
+        Trimmed list of n answers including the correct answer to use
+    i : int
+        Index in the return list of the correct answer
+
+    '''
+    a = list(range(len(all_possible_answers)))
+    index_correct = all_possible_answers.index(correct_answer)
+    a.remove(a[index_correct])
+    ans_list = list(np.random.choice(a,n-1,replace=False))
+    ans_list.append(index_correct)
+    ans_list.sort()
+    return_list = [all_possible_answers[x] for x in ans_list]
+    i = return_list.index(correct_answer)
+    
+    return return_list, i
         
 
 ####################
@@ -456,6 +493,94 @@ def format_IgneousClassification3D():
     print(' and ' + fname + '.txt')
     
     return Respondus_table
+
+
+def format_LogScaleIntensity():
+    '''
+    Formats a Respondus-formatted text file
+    for a question set that asks students to interpret earthquake magnitude
+    scales in light of logarithmic changes.
+    
+    This example does not require any imports, but generates the question
+    set de novo.
+    '''
+    # Generate start values
+    startvals = [x/10 for x in range(30,70,1)]
+    itervals = [1,2,3,4]
+    poss_answers = ['3 x', '10 x', '30 x', '100 x', '1,000 x', '10,000 x',
+                    '33,000 x', '100,000 x', '1,000,000 x']
+    amplitude_key = {
+        32      : '30 x',
+        1024    : '1,000 x',
+        32768   : '33,000 x',
+        1048576 : '1,000,000 x'
+        }
+    
+    # Build questions
+    questions = pd.DataFrame(
+        index = list(range(len(startvals))),
+        columns=['x1', 'x2', 'ans', 'Q_Amplitude', 'A_Amplitude',
+                 'Q_Energy', 'A_Energy'])
+    for n in range(len(startvals)):
+        x = startvals[n]
+        i = np.random.choice(itervals)
+        a = itervals.index(i) + 1
+        if x + i <10:
+            x2 = x + i
+        else:
+            x2 = x + np.random.choice([1,2])
+        questions.loc[n]['x1'] = x
+        questions.loc[n]['x2'] = x2
+        questions.loc[n]['ans'] = a
+        questions.loc[n]['Q_Amplitude'] = ( 
+            'Two earthquakes occur in a city. The first measures ' +
+            str(x) + ' on the Richter scale. The second measures ' +
+            str(x2) + '. How much larger is the amplitude of shaking in the '
+            'second earthquake compared to the first?' )
+        questions.loc[n]['A_Amplitude'] =  '{:,}'.format(int(10**i)) + ' x'
+        questions.loc[n]['Q_Energy'] = (
+            'Two earthquakes occur in a city. The first has a moment magnitude'
+            ' of ' + str(x) + '. The second has a moment magnitude of ' +
+            str(x2) + '. Roughly how much more energy was released in the '
+            'second earthquake compared to the first?' )
+        questions.loc[n]['A_Energy'] = amplitude_key[int(32**i)]
+    
+    # Fill in Respondus tables
+    for t in ['Amplitude', 'Energy']:
+        # Question type
+        Respondus_table['Type'] = ['MC'] * len(questions)
+        # Question title
+        Respondus_table['Title/ID'] = [t + ' scale'] * len(questions)
+        # Number of points per question
+        Respondus_table['Points'] = [1] * len(questions)
+        # Wording of the question
+        Respondus_table['Question Wording'] = questions['Q_' + t]
+        
+        # Multiple choice possible answers
+        # Select random incorrect answers
+        n_ans = 5
+        for q in list(questions.index):
+            ans_set, i = genRandomAnswerSet(
+                poss_answers, questions.loc[q]['A_'+ t], n_ans)
+            for n in list(range(n_ans)):
+                Respondus_table.at[q, 'Choice ' + str(n + 1)] = ans_set[n]
+            Respondus_table.at[q, 'Correct Answer'] = i+1
+            
+        # Reset the index
+        Respondus_table.reset_index(inplace=True)
+    
+        # Save the Respondus table file
+        fname = 'Respondus_'     + t
+        dirPath = os.getcwd()
+        Respondus_table.to_csv(dirPath + '/' + fname + '.csv', index=False)
+        print('Generated ' + t + ' question bank and saved it to ' + 
+              dirPath + '/' + fname + '.csv')
+        
+        # Build and save the Respondus text file
+        build_MC_bank(Respondus_table, dirPath + '/' + fname + '.txt')
+        print(' and ' + fname + '.txt')
+        
+
 
 def format_GenericMC():
     '''

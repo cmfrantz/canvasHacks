@@ -1,0 +1,440 @@
+Points: 1
+
+Title: Amplitude scale
+1) Two earthquakes occur in a city. The first measures 3.0 on the Richter scale. The second measures 5.0. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+*b) 100 x
+c) 10,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+2) Two earthquakes occur in a city. The first measures 3.1 on the Richter scale. The second measures 4.1. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 30 x
+d) 10,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+3) Two earthquakes occur in a city. The first measures 3.2 on the Richter scale. The second measures 6.2. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 30 x
+*c) 1,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+4) Two earthquakes occur in a city. The first measures 3.3 on the Richter scale. The second measures 6.3. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 100 x
+*c) 1,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+5) Two earthquakes occur in a city. The first measures 3.4 on the Richter scale. The second measures 6.4. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 30 x
+b) 100 x
+*c) 1,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+6) Two earthquakes occur in a city. The first measures 3.5 on the Richter scale. The second measures 6.5. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 30 x
+*c) 1,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+7) Two earthquakes occur in a city. The first measures 3.6 on the Richter scale. The second measures 7.6. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 100 x
+*d) 10,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+8) Two earthquakes occur in a city. The first measures 3.7 on the Richter scale. The second measures 4.7. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 30 x
+d) 100 x
+e) 100,000 x
+
+Points: 1
+
+Title: Amplitude scale
+9) Two earthquakes occur in a city. The first measures 3.8 on the Richter scale. The second measures 5.8. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+*a) 100 x
+b) 1,000 x
+c) 10,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+10) Two earthquakes occur in a city. The first measures 3.9 on the Richter scale. The second measures 7.9. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 100 x
+*c) 10,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+11) Two earthquakes occur in a city. The first measures 4.0 on the Richter scale. The second measures 6.0. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 30 x
+*b) 100 x
+c) 1,000 x
+d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+12) Two earthquakes occur in a city. The first measures 4.1 on the Richter scale. The second measures 8.1. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 100 x
+c) 1,000 x
+*d) 10,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+13) Two earthquakes occur in a city. The first measures 4.2 on the Richter scale. The second measures 5.2. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 1,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+14) Two earthquakes occur in a city. The first measures 4.3 on the Richter scale. The second measures 5.3. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+*a) 10 x
+b) 100 x
+c) 1,000 x
+d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+15) Two earthquakes occur in a city. The first measures 4.4 on the Richter scale. The second measures 7.4. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 30 x
+*d) 1,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+16) Two earthquakes occur in a city. The first measures 4.5 on the Richter scale. The second measures 7.5. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 100 x
+*d) 1,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+17) Two earthquakes occur in a city. The first measures 4.6 on the Richter scale. The second measures 8.6. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 100 x
+*d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+18) Two earthquakes occur in a city. The first measures 4.7 on the Richter scale. The second measures 7.7. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 30 x
+c) 100 x
+*d) 1,000 x
+e) 100,000 x
+
+Points: 1
+
+Title: Amplitude scale
+19) Two earthquakes occur in a city. The first measures 4.8 on the Richter scale. The second measures 5.8. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 30 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+20) Two earthquakes occur in a city. The first measures 4.9 on the Richter scale. The second measures 7.9. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 1,000 x
+c) 33,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+21) Two earthquakes occur in a city. The first measures 5.0 on the Richter scale. The second measures 8.0. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 30 x
+*c) 1,000 x
+d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+22) Two earthquakes occur in a city. The first measures 5.1 on the Richter scale. The second measures 7.1. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 30 x
+*c) 100 x
+d) 1,000 x
+e) 100,000 x
+
+Points: 1
+
+Title: Amplitude scale
+23) Two earthquakes occur in a city. The first measures 5.2 on the Richter scale. The second measures 9.2. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 100 x
+c) 1,000 x
+*d) 10,000 x
+e) 100,000 x
+
+Points: 1
+
+Title: Amplitude scale
+24) Two earthquakes occur in a city. The first measures 5.3 on the Richter scale. The second measures 6.3. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+*a) 10 x
+b) 30 x
+c) 10,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+25) Two earthquakes occur in a city. The first measures 5.4 on the Richter scale. The second measures 6.4. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 30 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+26) Two earthquakes occur in a city. The first measures 5.5 on the Richter scale. The second measures 9.5. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 30 x
+*d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+27) Two earthquakes occur in a city. The first measures 5.6 on the Richter scale. The second measures 7.6. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+*a) 100 x
+b) 10,000 x
+c) 33,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+28) Two earthquakes occur in a city. The first measures 5.7 on the Richter scale. The second measures 6.7. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 100 x
+d) 33,000 x
+e) 100,000 x
+
+Points: 1
+
+Title: Amplitude scale
+29) Two earthquakes occur in a city. The first measures 5.8 on the Richter scale. The second measures 6.8. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 30 x
+d) 1,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+30) Two earthquakes occur in a city. The first measures 5.9 on the Richter scale. The second measures 6.9. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 30 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+31) Two earthquakes occur in a city. The first measures 6.0 on the Richter scale. The second measures 7.0. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 30 x
+c) 100 x
+*d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+32) Two earthquakes occur in a city. The first measures 6.1 on the Richter scale. The second measures 9.1. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 100 x
+*b) 1,000 x
+c) 33,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+33) Two earthquakes occur in a city. The first measures 6.2 on the Richter scale. The second measures 9.2. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 100 x
+*d) 1,000 x
+e) 10,000 x
+
+Points: 1
+
+Title: Amplitude scale
+34) Two earthquakes occur in a city. The first measures 6.3 on the Richter scale. The second measures 8.3. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 100 x
+b) 1,000 x
+*c) 10,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+35) Two earthquakes occur in a city. The first measures 6.4 on the Richter scale. The second measures 7.4. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 10 x
+b) 100 x
+*c) 10,000 x
+d) 33,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+36) Two earthquakes occur in a city. The first measures 6.5 on the Richter scale. The second measures 9.5. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 100 x
+*b) 1,000 x
+c) 10,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+37) Two earthquakes occur in a city. The first measures 6.6 on the Richter scale. The second measures 7.6. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+*a) 10 x
+b) 30 x
+c) 1,000 x
+d) 10,000 x
+e) 100,000 x
+
+Points: 1
+
+Title: Amplitude scale
+38) Two earthquakes occur in a city. The first measures 6.7 on the Richter scale. The second measures 7.7. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+b) 10 x
+c) 30 x
+*d) 10,000 x
+e) 33,000 x
+
+Points: 1
+
+Title: Amplitude scale
+39) Two earthquakes occur in a city. The first measures 6.8 on the Richter scale. The second measures 7.8. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 3 x
+*b) 10 x
+c) 1,000 x
+d) 100,000 x
+e) 1,000,000 x
+
+Points: 1
+
+Title: Amplitude scale
+40) Two earthquakes occur in a city. The first measures 6.9 on the Richter scale. The second measures 9.9. How much larger is the amplitude of shaking in the second earthquake compared to the first?
+
+a) 30 x
+b) 100 x
+*c) 1,000 x
+d) 10,000 x
+e) 100,000 x
+
